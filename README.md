@@ -42,7 +42,7 @@ NOTE: `live_camera` need to be set only if `visual_input` has been set to true.
 ## Citation
 If you want to cite this work, please use the following bibtex
 
-```
+```python
 @inproceedings{tsitos2021prediction,
   title={Real-time Feasibility of a Human Intention Method Evaluated Through a Competitive Human-Robot Reaching Game},
   author={Tsitos, Athanasios C and Dagioglou, Maria and Giannakopoulos, Theodoros},
