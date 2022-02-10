@@ -22,6 +22,9 @@ This package provides the functionality for an object reaching game. Two objects
 * `config/prediction.yaml`: Set the positions (pixels) of the human objects.
 * `config/object_reaching.yaml`: Set the positions (3D coordinates expressed in the base_link frame) of the robot objects, the initial position of the robot, the velocity with which the robot will hit the objects and the gain of the controller used for regulating the robot commanded velocities.
  
+## Models
+In the `models` folder exist trained logistic regression models. The `touching_objects` folder contains models trained on objects which were touching each other, while the `distant_objects` folder contains models trained on objects set at a distance of 13cm. In both cases, the distance between the objects and the initial position of the human hand was 50cm.
+
 ## Run
 Run `roslaunch object_reaching object_reaching.launch` to launch the [OpenPose ROS node](https://github.com/firephinx/openpose_ros) used for the human monitoring, the motion detection node, the prediction node and the robot motion node.
 
@@ -35,3 +38,14 @@ To launch the real robot, check the Roboskel's [UR3 repo](https://github.com/Rob
 * models_path: Set the absolute path of the models used for the prediction
 
 NOTE: `live_camera` need to be set only if `visual_input` has been set to true.
+
+## Citation
+If you want to cite this work, please use the following bibtex
+
+`@inproceedings{tsitos2021prediction,
+  title={Real-time Feasibility of a Human Intention Method Evaluated Through a Competitive Human-Robot Reaching Game},
+  author={Tsitos, Athanasios C and Dagioglou, Maria and Giannakopoulos, Theodoros},
+  booktitle={17th ACM/IEEE International Conference on Human-Robot Interaction (HRI)},
+  year={2022}
+
+}`
