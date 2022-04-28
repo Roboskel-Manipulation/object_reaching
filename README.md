@@ -26,6 +26,8 @@ This package provides the functionality for an object reaching game. Two objects
 In the `models` folder exist trained logistic regression models. The `touching_objects` folder contains models trained on objects which were touching each other, while the `distant_objects` folder contains models trained on objects set at a distance of 13cm. In both cases, the distance between the objects and the initial position of the human hand was 50cm.
 
 ## Run
+<b> Note </b>: Before running the demo, make sure to set the parameters `xGoal`, `yGoal` (pixels object positions) in the `config/object_reaching.yaml` file. One way to do it is to record "some" wrist OpenPose pixels when the human grabs each object and use their average as the object positions.
+
 Run `roslaunch object_reaching object_reaching.launch` to launch the [OpenPose ROS node](https://github.com/firephinx/openpose_ros) used for the human monitoring, the motion detection node, the prediction node and the robot motion node.
 
 Once the nodes have been launched, in another terminal run `rosservice call /next_motion`. This service call will initialize the loop of the game, namely the motion detection node will listen to the 2D output of the OpenPose node. At the end of the game, namely when the robot hits an object, the robot will stay still for 5 seconds and then automatically return to its initial position. Then, run again `rosservice call /next_motion` to start the second experiment. 
